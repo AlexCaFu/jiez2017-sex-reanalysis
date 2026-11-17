@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software or these results, please cite them as below."
+title: "Reanalysis code and results for: Source-resolved co-metabolism: locating where biological sex acts on microbiome–host pathways in atherosclerotic cardiovascular disease"
+authors:
+  - family-names: "Cabrera-Fuentes"
+    given-names: "Hector Alejandro"
+    orcid: "https://orcid.org/0000-0002-8502-7098"
+    affiliation: "Tecnológico Nacional de México/Instituto Tecnológico de Tijuana"
+version: "1.1.0"
+date-released: "2026-11-17"
+license: "MIT"
+repository-code: "https://github.com/AlexCaFu/jiez2017-sex-reanalysis"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21144753"
+    description: "Concept DOI, resolves to the latest version"
+references:
+  - type: article
+    title: "Source-resolved co-metabolism: locating where biological sex acts on microbiome–host pathways in atherosclerotic cardiovascular disease"
+    authors:
+      - family-names: "Cabrera-Fuentes"
+        given-names: "Hector Alejandro"
+    journal: "mSystems"
+    doi: "10.1128/msystems.00445-26"

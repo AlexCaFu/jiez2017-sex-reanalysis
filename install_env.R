@@ -4,8 +4,8 @@
 # Run ONCE on a machine WITH internet:   Rscript install_env.R
 #
 # Installs:
-#   - ggplot2 (+ dplyr)          -> needed by BOTH scripts
-#   - curatedMetagenomicData     -> needed ONLY by JieZ2017_sex_analysis.R
+#   - ggplot2, dplyr, vegan      -> CRAN packages used by the scripts
+#   - curatedMetagenomicData     -> needed by 01_reanalysis_JieZ2017.R and 02_results_export.R
 #     (this is the remote resource; it pulls profiles from Bioconductor's
 #      ExperimentHub over the network, it is not a local dataset)
 #
@@ -50,7 +50,8 @@ suppressMessages({
 })
 
 cat("\nIf every row says OK:\n")
-cat("   Rscript Figure2_evidence_map.R      # the manuscript figure (no data)\n")
-cat("   Rscript JieZ2017_sex_analysis.R     # downloads profiles, ~1-3 GB first run\n\n")
+cat("   Rscript 01_reanalysis_JieZ2017.R    # analysis as archived in v1.0.0; downloads about 12 MB on first run\n")
+cat("   Rscript 02_results_export.R         # writes the result tables to results/\n")
+cat("   Rscript Figure2_evidence_map.R      # Figure 2 of the original submission, not of the article (no data)\n\n")
 cat(R.version.string, "\n")
 if (requireNamespace("BiocManager", quietly = TRUE)) print(BiocManager::version())
