@@ -1,0 +1,55 @@
+JieZ_2017 rows in sampleMetadata: 385 
+
+
+profiled samples: 385 | species rows: 682 
+            group    sex subjects bmi_recorded medication_recorded
+1         Healthy female      101           97                   0
+2         Healthy   male       69           66                   0
+3 Atherosclerosis female       53           37                  37
+4 Atherosclerosis   male      157          112                 112
+with recorded sex: 380 | with BMI: 312 | medication recorded: 149 
+species after 10% prevalence filter: 240 
+species tested: 240 | observations per model: 312 | lowest interaction FDR: 0.352 | lowest sex FDR: 0.164 
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 999
+
+adonis2(formula = dist(clr) ~ grp * sex, data = md, permutations = 999, by = "terms")
+          Df SumOfSqs      R2      F Pr(>F)    
+grp        1    18271 0.01938 7.4862  0.001 ***
+sex        1     3630 0.00385 1.4873  0.034 *  
+grp:sex    1     3297 0.00350 1.3507  0.079 .  
+Residual 376   917689 0.97328                  
+Total    379   942887 1.00000                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Permutation test for adonis under reduced model
+Terms added sequentially (first to last)
+Permutation: free
+Number of permutations: 999
+
+adonis2(formula = dist(clr[ok, , drop = FALSE]) ~ grp * sex + BMI, data = md[ok, ], permutations = 999, by = "terms")
+          Df SumOfSqs      R2      F Pr(>F)    
+grp        1    17742 0.02309 7.3667  0.001 ***
+sex        1     3963 0.00516 1.6457  0.010 ** 
+BMI        1     3516 0.00458 1.4599  0.030 *  
+grp:sex    1     3626 0.00472 1.5057  0.021 *  
+Residual 307   739365 0.96245                  
+Total    311   768212 1.00000                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Analysis of Variance Table
+
+Response: Distances
+           Df Sum Sq Mean Sq F value Pr(>F)
+Groups      1    1.1  1.0915  0.0585  0.809
+Residuals 378 7048.5 18.6468               
+
+                                                                                                                    pathway
+PWY-6803: phosphatidylcholine acyl editing                                       PWY-6803: phosphatidylcholine acyl editing
+7ALPHADEHYDROX-PWY: cholate degradation (bacteria, anaerobic) 7ALPHADEHYDROX-PWY: cholate degradation (bacteria, anaerobic)
+                                                              samples_nonzero samples
+PWY-6803: phosphatidylcholine acyl editing                                351     380
+7ALPHADEHYDROX-PWY: cholate degradation (bacteria, anaerobic)              62     380
+Done. Result tables written to results/
